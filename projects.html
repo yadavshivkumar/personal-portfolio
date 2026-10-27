@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic page settings -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Website favicon shown in the browser tab -->
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+
+    <!-- Page title and search-engine description -->
+    <title>Projects | IT & Data Portfolio</title>
+    <meta
+        name="description"
+        content="Explore projects in Excel dashboards, Python data analysis, and web development."
+    >
+
+    <!-- Project page stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/projects.css">
+</head>
+
+<body>
+
+    <!-- Navigation bar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><span></span></a>
+
+            <nav aria-label="Main navigation">
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#skills">Skills</a></li>
+                    <li><a href="projects.html" aria-current="page">Projects</a></li>
+                    <li><a href="certifications.html">Certifications</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Projects page introduction -->
+    <main>
+        <section id="all-projects" class="section">
+            <div class="container">
+
+                <p class="projects-eyebrow">MY WORK</p>
+
+                <h1 class="projects-title">Explore My Projects</h1>
+
+                <p class="section-description">
+                    A collection of practical projects demonstrating my
+                    skills in data analysis, business dashboards, and
+                    frontend web development.
+                </p>
+
+                <!-- Project summary cards -->
+                <div class="project-summary-grid">
+
+                    <article class="project-summary-card">
+                        <span class="summary-number"></span>
+                        <h2>Excel Dashboards</h2>
+                        <p>Business reporting and sales analysis.</p>
+                    </article>
+
+                    <article class="project-summary-card">
+                        <span class="summary-number"></span>
+                        <h2>Python Analysis</h2>
+                        <p>Data cleaning, exploration, EDA and insights.</p>
+                    </article>
+
+                    <article class="project-summary-card">
+                        <span class="summary-number"></span>
+                        <h2>Web Development</h2>
+                        <p>Interactive frontend web applications.</p>
+                    </article>
+
+                </div>
+
+                <!-- Category filters used by projects.js -->
+                <div class="project-filters" aria-label="Filter projects">
+
+                    <button
+                        type="button"
+                        class="filter-btn active"
+                        data-filter="all"
+                        aria-pressed="true"
+                    >
+                        All Projects
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-btn"
+                        data-filter="excel"
+                        aria-pressed="false"
+                    >
+                        Excel Dashboards
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-btn"
+                        data-filter="python"
+                        aria-pressed="false"
+                    >
+                        Python Analysis
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-btn"
+                        data-filter="web"
+                        aria-pressed="false"
+                    >
+                        Web Development
+                    </button>
+
+                </div>
+
+                <!-- Number of projects currently displayed -->
+                <p
+                    id="project-count"
+                    class="project-count"
+                    aria-live="polite"
+                >
+                    Showing 14 projects
+                </p>
+
+                <!-- =========================================
+     ALL 14 PROJECT CARDS
+     ========================================== -->
+
+<div id="projects-grid" class="projects-grid">
+
+    <!-- =====================================
+         EXCEL DASHBOARD PROJECTS
+         ====================================== -->
+
+    <!-- Project 1: Coffee Shop Sales Analysis -->
+    <article class="project-card" data-category="excel">
+
+        <span class="project-category">Excel Dashboard</span>
+
+        <h2>Coffee Shop Sales Analysis</h2>
+
+        <p>
+            Analyze coffee shop sales data to examine revenue
+            patterns, product performance, and sales trends
+            through an Excel-based business analysis project.
+        </p>
+
+        <div class="project-tags">
+            <span>Microsoft Excel</span>
+            <span>Sales Analysis</span>
+            <span>Dashboard</span>
+        </div>
+
+    </article>
+
+
+    <!-- Project 2: Ferns and Petals Sales Analysis -->
+    <article class="project-card" data-category="excel">
+
+        <span class="project-category">Excel Dashboard</span>
+
+        <h2>Ferns and Petals Sales Analysis</h2>
+
+        <p>
+            Explore gifting sales data to understand customer
+            ordering patterns, product performance, and sales
+            trends using Excel-based analysis.
+        </p>
+
+        <div class="project-tags">
+            <span>Microsoft Excel</span>
+            <span>Business Analysis</span>
+            <span>Dashboard</span>
+        </div>
+
+    </article>
+
+
+    <!-- Project 3: E-commerce Sales Analysis -->
+    <article class="project-card" data-category="excel">
+
+        <span class="project-category">Excel Dashboard</span>
+
+        <h2>E-commerce Sales Analysis</h2>
+
+        <p>
+            Examine e-commerce sales data to explore revenue,
+            product performance, and order trends and present
+            relevant findings through data analysis.
+        </p>
+
+        <div class="project-tags">
+            <span>Microsoft Excel</span>
+            <span>E-commerce</span>
+            <span>Data Analysis</span>
+        </div>
+
+    </article>
+
+
+    <!-- Project 4: Amazon Stock Analysis -->
+    <article class="project-card" data-category="excel">
+
+        <span class="project-category">Excel Dashboard</span>
+
+        <h2>AMZN Stock Analysis</h2>
+
+        <p>
+            Analyze historical Amazon stock data to examine
+            price movements and explore historical market
+            trends using Excel.
+        </p>
+
+        <div class="project-tags">
+            <span>Microsoft Excel</span>
+            <span>Stock Analysis</span>
+            <span>Data Visualization</span>
+        </div>
+
+    </article>
+
+
+    <!-- Project 5: IPL Dataset Analysis -->
+    <article class="project-card" data-category="excel">
+
+        <span class="project-category">Excel Dashboard</span>
+
+        <h2>IPL Dataset Analysis</h2>
+
+        <p>
+            Explore Indian Premier League data to investigate
+            team and player statistics and identify patterns
+            in cricket performance.
+        </p>
+
+        <div class="project-tags">
+            <span>Microsoft Excel</span>
+            <span>Sports Analytics</span>
+            <span>Dashboard</span>
+        </div>
+
+    </article>
+
+
+    <!-- =====================================
+         PYTHON DATA ANALYSIS PROJECTS
+         ====================================== -->
+
+    <!-- Project 6: Student Performance Analysis -->
+    <article class="project-card" data-category="python">
+
+        <span class="project-category">Python Data Analysis</span>
+
+        <h2>Student Performance Analysis</h2>
+
+        <p>
+            Analyze student performance data to explore
+            academic results and investigate relationships
+            between student characteristics and performance.
+        </p>
+
+        <div class="project-tags">
+            <span>Python</span>
+            <span>Pandas</span>
+            <span>Seaborn</span>
+        </div>
+
+    </article>
+
+
+    <!-- Project 7: Data Cleaning and Quality Checker -->
+    <article class="project-card" data-category="python">
+
+        <span class="project-category">Python Data Analysis</span>
+
+        <h2>Data Cleaning and Quality Checker</h2>
+
+        <p>
+            Inspect datasets for data-quality issues and
+            practise data cleaning and validation to improve
+            data consistency and reliability.
+        </p>
+
+        <div class="project-tags">
+            <span>Python</span>
+            <span>Pandas</span>
+            <span>Data Cleaning</span>
+        </div>
+
+    </article>
+
+
+    <!-- Project 8: Diwali Sales Analysis -->
+    <article class="project-card" data-category="python">
+
+        <span class="project-category">Python Data Analysis</span>
+
+        <h2>Diwali Sales Analysis</h2>
+
+        <p>
+            Explore festive sales data to investigate customer
+            purchasing patterns, product trends, and insights
+            that can support business decisions.
+        </p>
+
+        <div class="project-tags">
+            <span>Python</span>
+            <span>Exploratory Data Analysis</span>
+            <span>Visualization</span>
+        </div>
+
+    </article>
+
+
+    <!-- Project 9: Amazon Sales Analysis -->
+    <article class="project-card" data-category="python">
+
+        <span class="project-category">Python Data Analysis</span>
+
+        <h2>Amazon Sales Analysis</h2>
+
+        <p>
+            Examine Amazon sales data to explore sales patterns,
+            product categories, and performance using Python
+            data-analysis techniques.
+        </p>
+
+        <div class="project-tags">
+            <span>Python</span>
+            <span>Pandas</span>
+            <span>Exploratory Data Analysis</span>
+        </div>
+
+    </article>
+
+
+    <!-- Project 10: E-commerce Sales Analysis -->
+    <article class="project-card" data-category="python">
+
+        <span class="project-category">Python Data Analysis</span>
+
+        <h2>E-commerce Sales Analysis</h2>
+
+        <p>
+            Analyze e-commerce data with Python to investigate
+            sales patterns, summarize key trends, and explore
+            insights from the available dataset.
+        </p>
+
+        <div class="project-tags">
+            <span>Python</span>
+            <span>NumPy</span>
+            <span>Matplotlib</span>
+        </div>
+
+    </article>
+
+
+    <!-- =====================================
+         WEB DEVELOPMENT PROJECTS
+         ====================================== -->
+
+    <!-- Project 11: Employee Management System -->
+    <article class="project-card" data-category="web">
+
+        <span class="project-category">Web Development</span>
+
+        <h2>Employee Management System</h2>
+
+        <p>
+            A frontend web application designed to organize
+            employee records and demonstrate record-management
+            functionality using standard web technologies.
+        </p>
+
+        <div class="project-tags">
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>JavaScript</span>
+        </div>
+
+    </article>
+
+
+    <!-- Project 12: Ausbildung Application Tracker -->
+    <article class="project-card" data-category="web">
+
+        <span class="project-category">Web Development</span>
+
+        <h2>Ausbildung Application Tracker</h2>
+
+        <p>
+            A web application concept for organizing Ausbildung
+            applications and tracking their progress through
+            a structured interface.
+        </p>
+
+        <div class="project-tags">
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>JavaScript</span>
+        </div>
+
+    </article>
+
+
+    <!-- Project 13: Student Management System -->
+    <article class="project-card" data-category="web">
+
+        <span class="project-category">Web Development</span>
+
+        <h2>Student Management System</h2>
+
+        <p>
+            A student-management interface for organizing
+            student records, marks, and attendance, with
+            summary cards for a quick overview of information.
+        </p>
+
+        <div class="project-tags">
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>JavaScript</span>
+        </div>
+
+    </article>
+
+
+    <!-- Project 14: ShopEase E-commerce Website -->
+    <article class="project-card" data-category="web">
+
+        <span class="project-category">Web Development</span>
+
+        <h2>ShopEase E-commerce Website</h2>
+
+        <p>
+            A frontend e-commerce website designed to present
+            products and demonstrate an online shopping
+            interface using standard web technologies.
+        </p>
+
+        <div class="project-tags">
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>JavaScript</span>
+        </div>
+
+    </article>
+
+</div>
+
+                <!-- Message shown if no projects match a filter -->
+                <p id="no-projects" hidden>
+                    No projects found in this category.
+                </p>
+
+                <!-- Return to homepage -->
+                <div class="projects-back-home">
+                    <a href="index.html" class="btn btn-secondary">
+                        ← Back to Home
+                    </a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Shiv. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Project category filtering logic -->
+    <script src="js/projects.js"></script>
+
+</body>
+</html>

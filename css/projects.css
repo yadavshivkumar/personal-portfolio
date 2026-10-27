@@ -1,0 +1,537 @@
+/* =========================================
+   PROJECT FILTER BUTTONS
+   ========================================= */
+
+/* Arrange category filters in a centered, flexible row. */
+.project-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 36px 0 22px;
+}
+
+/* Default filter button styling. */
+.filter-btn {
+    padding: 11px 18px;
+    color: var(--text-secondary);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font: inherit;
+    font-size: 0.9rem;
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+/* Highlight hovered and selected filter buttons. */
+.filter-btn:hover,
+.filter-btn.active {
+    color: #ffffff;
+    background: var(--accent-blue);
+    border-color: var(--accent-blue);
+}
+
+/* Provide a small visual response when a filter is clicked. */
+.filter-btn:active {
+    transform: scale(0.97);
+}
+
+/* Show a visible keyboard-focus indicator. */
+.filter-btn:focus-visible {
+    outline: 2px solid var(--accent-blue);
+    outline-offset: 4px;
+}
+
+
+/* =========================================
+   PROJECT COUNTER AND EMPTY STATE
+   ========================================= */
+
+/* Center the number of currently visible projects. */
+.project-count {
+    margin-bottom: 24px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* Display this message when a category has no projects. */
+#no-projects {
+    margin: 36px 0;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+/* Ensure filtered cards are removed from the layout. */
+.project-card[hidden] {
+    display: none !important;
+}
+
+
+/* =========================================
+   PROJECT GRID
+   ========================================= */
+
+/* Display three project cards per row on large screens. */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    width: 100%;
+    align-items: stretch;
+}
+
+
+/* =========================================
+   INDIVIDUAL PROJECT CARDS
+   ========================================= */
+
+/* Use a vertical layout to organize each card's content. */
+.project-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+    padding: 24px;
+
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+/* Add a subtle hover effect on devices that support hovering. */
+@media (hover: hover) {
+    .project-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--accent-blue);
+        box-shadow: 0 12px 30px rgb(0 0 0 / 15%);
+    }
+}
+
+/* Keep project category labels compact and readable. */
+.project-category {
+    display: inline-block;
+    margin-bottom: 16px;
+    padding: 6px 10px;
+
+    color: var(--accent-blue);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+
+    font-size: 0.78rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+/* Maintain consistent spacing for project titles. */
+.project-card h2 {
+    margin: 0 0 14px;
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+}
+
+/* Make project descriptions easy to read. */
+.project-card > p {
+    margin: 0 0 20px;
+    color: var(--text-secondary);
+    font-size: 0.94rem;
+    line-height: 1.75;
+}
+
+
+/* =========================================
+   TECHNOLOGY TAGS
+   ========================================= */
+
+/* Arrange technology tags in a flexible row. */
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+    margin-bottom: 22px;
+    width: 100%;
+}
+
+/* Style each individual technology tag. */
+.project-tags span {
+    display: inline-flex;
+    align-items: center;
+    max-width: 100%;
+    padding: 6px 10px;
+
+    color: var(--text-secondary);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+
+    font-size: 0.78rem;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================
+   PROJECT ACTION BUTTONS
+   ========================================= */
+
+/* Keep the GitHub action at the bottom of each card. */
+.project-card-actions {
+    display: flex;
+    width: 100%;
+    margin-top: auto;
+}
+
+/* Make the GitHub button fit the available card width. */
+.project-card-actions .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    width: 100%;
+    min-height: 46px;
+    padding: 12px 14px;
+
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+/* Provide a subtle button hover effect. */
+.project-card-actions .btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Make keyboard navigation visible on GitHub buttons. */
+.project-card-actions .btn:focus-visible {
+    outline: 2px solid var(--accent-blue);
+    outline-offset: 4px;
+}
+
+
+/* =========================================
+   PROJECT SUMMARY CARDS
+   ========================================= */
+
+/* Display the category summary cards in three columns. */
+.project-summary-grid,
+.project-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin: 32px 0;
+}
+
+/* Style the summary cards. */
+.project-summary-card,
+.stat-card {
+    min-width: 0;
+    padding: 24px;
+
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+/* Add a hover effect to summary cards. */
+@media (hover: hover) {
+    .project-summary-card:hover,
+    .stat-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--accent-blue);
+    }
+}
+
+/* Style summary numbers. */
+.summary-number,
+.stat-card h3 {
+    display: block;
+    margin: 0 0 12px;
+
+    color: var(--accent-blue);
+    font-size: 2.3rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* Style summary card headings. */
+.project-summary-card h2,
+.stat-card p {
+    margin: 0 0 10px;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+/* Style summary card descriptions. */
+.project-summary-card p,
+.stat-card span {
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    line-height: 1.7;
+}
+
+/* Remove the bottom margin from the last description. */
+.project-summary-card p:last-child,
+.stat-card span:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================
+   BACK TO HOME BUTTON
+   ========================================= */
+
+/* Center the button and add spacing below the projects grid. */
+.projects-back-home {
+    display: flex;
+    justify-content: center;
+    margin-top: 45px;
+    padding-bottom: 20px;
+}
+
+/* Style the Back to Home link as a modern outlined button. */
+.projects-back-home a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 13px 24px;
+    min-height: 48px;
+
+    color: var(--accent-blue);
+    background: transparent;
+    border: 1px solid var(--accent-blue);
+    border-radius: 10px;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+/* Change the button appearance when the user hovers over it. */
+.projects-back-home a:hover {
+    color: #ffffff;
+    background: var(--accent-blue);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgb(59 130 246 / 20%);
+}
+
+/* Make keyboard navigation clearly visible. */
+.projects-back-home a:focus-visible {
+    outline: 2px solid var(--accent-blue);
+    outline-offset: 4px;
+}
+
+/* Add a small press effect when the button is clicked. */
+.projects-back-home a:active {
+    transform: translateY(0);
+}
+
+/* Disable animations for users who prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+    .projects-back-home a {
+        transition: none;
+    }
+
+    .projects-back-home a:hover {
+        transform: none;
+    }
+}
+
+
+/* =========================================
+   TABLET RESPONSIVE LAYOUT
+   ========================================= */
+
+/* Display two project cards per row on tablets. */
+@media (max-width: 950px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .project-summary-grid,
+    .project-stats {
+        gap: 20px;
+    }
+
+    .project-card {
+        padding: 22px;
+    }
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVE LAYOUT
+   ========================================= */
+
+/* Display one card per row on mobile devices. */
+@media (max-width: 600px) {
+    .projects-grid,
+    .project-summary-grid,
+    .project-stats {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .project-card {
+        padding: 20px;
+    }
+
+    .project-card h2 {
+        font-size: 1.12rem;
+    }
+
+    .project-card > p {
+        font-size: 0.92rem;
+    }
+
+    .project-summary-card,
+    .stat-card {
+        padding: 20px;
+    }
+
+    .project-filters {
+        gap: 8px;
+        margin: 28px 0 20px;
+    }
+
+    .filter-btn {
+        padding: 10px 14px;
+        font-size: 0.85rem;
+    }
+
+    .project-card-actions .btn {
+        font-size: 0.85rem;
+    }
+}
+
+
+/* =========================================
+   REDUCED MOTION ACCESSIBILITY
+   ========================================= */
+
+/* Respect users who prefer reduced animations. */
+@media (prefers-reduced-motion: reduce) {
+    .project-card,
+    .project-summary-card,
+    .stat-card,
+    .filter-btn,
+    .project-card-actions .btn {
+        transition: none;
+    }
+
+    .project-card:hover,
+    .project-summary-card:hover,
+    .stat-card:hover,
+    .project-card-actions .btn:hover {
+        transform: none;
+    }
+}
+
+
+
+
+
+
+
+
+/* =========================================
+   GITHUB BUTTON - PROJECT CARDS
+   ========================================= */
+
+/* Default button appearance */
+.project-card-actions .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 46px;
+    padding: 12px 16px;
+
+    /* Transparent background with a blue border */
+    background: transparent;
+    color: var(--accent-blue);
+    border: 1px solid var(--accent-blue);
+    border-radius: 8px;
+
+    /* Text styling */
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    line-height: 1.5;
+
+    /* Smooth hover animation */
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+/* Hover effect */
+.project-card-actions .btn:hover {
+    background: var(--accent-blue);
+    color: #3096f4;
+    border-color: var(--accent-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgb(59 130 246 / 20%);
+}
+
+/* Keyboard accessibility */
+.project-card-actions .btn:focus-visible {
+    outline: 2px solid var(--accent-blue);
+    outline-offset: 4px;
+}
+
+/* Button click effect */
+.project-card-actions .btn:active {
+    transform: translateY(0);
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .project-card-actions .btn {
+        transition: none;
+    }
+
+    .project-card-actions .btn:hover {
+        transform: none;
+    }
+}

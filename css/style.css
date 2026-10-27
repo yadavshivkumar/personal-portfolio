@@ -1,0 +1,1471 @@
+
+/* =========================================
+   1. GLOBAL DESIGN SYSTEM
+   Define reusable colors, fonts, and spacing
+========================================= */
+
+
+:root {
+
+    /* Main background and surface colours */
+    --bg-primary: #0a0f1c;
+    --bg-secondary: #111827;
+    --bg-card: #172236;
+
+    /* Text colours */
+    --text-primary: #f1f5f9;
+    --text-secondary: #b0bdd0;
+
+    /* Accent colours */
+    --accent-primary: #3b82f6;
+    --accent-hover: #60a5fa;
+
+    /* Borders and effects */
+    --border-color: #2b3a52;
+
+    /* Layout */
+    --container-width: 1120px;
+}
+
+/* Remove default browser spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Smooth scrolling when navigation links are clicked */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+/* Default website typography and background */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.7;
+}
+
+/* Make links inherit the website's design */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Keep images within their containers */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Consistent heading spacing */
+h1,
+h2,
+h3 {
+    line-height: 1.25;
+}
+
+/* Main section heading */
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 24px;
+}
+
+/* Paragraph text */
+p {
+    color: var(--text-secondary);
+}
+
+/* =========================================
+   2. HEADER AND NAVIGATION
+========================================= */
+
+/* Header stays visible while scrolling */
+header {
+    background-color: rgba(11, 17, 32, 0.95);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Navigation layout */
+nav {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 18px 24px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+}
+
+/* Logo styling */
+.logo {
+    font-size: 1.7rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+/* Blue dot after the logo */
+.logo span {
+    color: var(--accent-primary);
+}
+
+/* Navigation links layout */
+nav ul {
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+/* Individual navigation links */
+nav ul a {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+/* Highlight links when hovered */
+nav ul a:hover {
+    color: var(--accent-hover);
+}
+
+/* =========================================
+   3. MAIN CONTENT LAYOUT
+========================================= */
+
+/* Consistent horizontal spacing for all sections */
+main section {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 90px 24px;
+}
+
+/* =========================================
+   4. HERO SECTION
+========================================= */
+
+/* Center the main introduction */
+#home {
+    min-height: 78vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Small introductory label */
+#home > p:first-child {
+    color: var(--accent-hover);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 22px;
+}
+
+/* Main hero heading */
+#home h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 800;
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+}
+
+/* Hero subtitle */
+#home h2 {
+    color: var(--accent-hover);
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-weight: 500;
+    margin-bottom: 22px;
+}
+
+/* Hero description */
+#home > p:nth-of-type(2) {
+    max-width: 680px;
+    font-size: 1.05rem;
+    margin-bottom: 30px;
+}
+
+/* =========================================
+   5. BUTTON STYLES
+========================================= */
+
+/* Give hero and project links a button appearance */
+#home > a,
+#featured-projects > a,
+#contact > a {
+    display: inline-block;
+    background-color: var(--accent-primary);
+    color: #ffffff;
+
+    padding: 12px 22px;
+    margin: 6px 10px 6px 0;
+
+    border: 1px solid var(--accent-primary);
+    border-radius: 8px;
+
+    font-weight: 600;
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* Button hover effect */
+#home > a:hover,
+#featured-projects > a:hover,
+#contact > a:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   6. ABOUT, SKILLS AND CAREER SECTIONS
+========================================= */
+
+/* Add a subtle divider between major sections */
+#about,
+#skills,
+#featured-projects,
+#career-interests,
+#contact {
+    border-top: 1px solid var(--border-color);
+}
+
+/* Section heading accent */
+section h2 {
+    color: var(--text-primary);
+}
+
+/* Skills subsection headings */
+#skills h3 {
+    color: var(--accent-hover);
+    font-size: 1.05rem;
+    margin-top: 24px;
+    margin-bottom: 8px;
+}
+
+/* Keep introductory paragraphs readable */
+#about p,
+#featured-projects p,
+#career-interests p,
+#contact p {
+    max-width: 760px;
+    margin-bottom: 20px;
+}
+
+/* =========================================
+   7. FOOTER
+========================================= */
+
+/* Footer styling */
+footer {
+    padding: 28px 24px;
+    text-align: center;
+
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+}
+
+/* Footer text */
+footer p {
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   8. RESPONSIVE DESIGN
+   Adjust the layout for smaller screens
+========================================= */
+
+@media (max-width: 768px) {
+
+    /* Reduce navigation spacing */
+    nav {
+        padding: 16px 20px;
+        flex-wrap: wrap;
+    }
+
+    /* Allow navigation links to wrap on small screens */
+    nav ul {
+        gap: 14px;
+        flex-wrap: wrap;
+    }
+
+    /* Slightly smaller navigation text */
+    nav ul a {
+        font-size: 0.88rem;
+    }
+
+    /* Reduce section spacing */
+    main section {
+        padding: 65px 20px;
+    }
+
+    /* Adjust hero heading for mobile */
+    #home h1 {
+        letter-spacing: -1px;
+    }
+
+    /* Adjust section headings */
+    section h2 {
+        font-size: 1.7rem;
+    }
+}
+
+/* Extra adjustments for narrow mobile screens */
+@media (max-width: 480px) {
+
+    /* Stack the logo and navigation vertically */
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Use two navigation columns when space is limited */
+    nav ul {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        gap: 10px 18px;
+    }
+
+    /* Reduce hero section height */
+    #home {
+        min-height: 70vh;
+    }
+
+    /* Make buttons more comfortable to tap */
+    #home > a,
+    #featured-projects > a,
+    #contact > a {
+        padding: 11px 16px;
+    }
+}
+
+/* =========================================
+   EDUCATION SECTION
+   Display educational background clearly
+========================================= */
+
+/* Education section styling */
+#education {
+    border-top: 1px solid var(--border-color);
+}
+
+/* Education card layout */
+.education-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--accent-primary);
+    border-radius: 10px;
+
+    padding: 24px;
+    margin-bottom: 20px;
+
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Subtle hover effect */
+.education-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-primary);
+}
+
+/* Degree or qualification title */
+.education-card h3 {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* Institution, year, and other details */
+.education-card p {
+    margin-bottom: 6px;
+}
+
+/* Highlight dates and qualification details */
+.education-card .education-meta {
+    color: var(--accent-hover);
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+}
+
+
+/* =========================================
+   CERTIFICATIONS SECTION
+   Present professional courses and certificates
+========================================= */
+
+#certifications {
+    border-top: 1px solid var(--border-color);
+}
+
+/* Certification cards grid */
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+/* Individual certification card */
+.certification-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+
+    padding: 22px;
+
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Hover effect */
+.certification-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-primary);
+}
+
+/* Certification title */
+.certification-card h3 {
+    color: var(--text-primary);
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+}
+
+/* Certification provider and other details */
+.certification-card p {
+    font-size: 0.92rem;
+    margin-bottom: 12px;
+}
+
+/* Certificate verification link */
+.certification-card a {
+    color: var(--accent-hover);
+    font-weight: 600;
+}
+
+.certification-card a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive layout for tablets */
+@media (max-width: 900px) {
+    .certifications-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Responsive layout for mobile phones */
+@media (max-width: 560px) {
+    .certifications-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+
+
+/* ============================================
+   CONTACT SECTION - PROFESSIONAL LAYOUT
+   ============================================ */
+
+/* Primary contact buttons ka responsive grid */
+.contact-primary-links {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 950px;
+    margin: 35px auto 0;
+}
+
+/* Email, GitHub aur LinkedIn buttons */
+.contact-primary-btn {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+    padding: 22px;
+    color: var(--text-primary);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    text-decoration: none;
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background-color 0.3s ease;
+}
+
+/* Button icons */
+.contact-primary-btn svg {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    fill: var(--accent-color);
+}
+
+/* Button text container */
+.contact-primary-btn span {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 0;
+}
+
+/* Main button label */
+.contact-primary-btn strong {
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+/* Supporting text */
+.contact-primary-btn small {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+/* Hover effect */
+.contact-primary-btn:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-color);
+    background: var(--bg-secondary);
+}
+
+/* Keyboard focus visibility */
+.contact-primary-btn:focus-visible,
+.contact-social-icon:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 4px;
+}
+
+/* Secondary social media section */
+.contact-social-section {
+    margin-top: 38px;
+    text-align: center;
+}
+
+/* Secondary social section heading */
+.contact-social-section > p {
+    margin-bottom: 18px;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* Small social media icon buttons */
+.contact-social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+/* Individual social icon */
+.contact-social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    color: var(--text-primary);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    text-decoration: none;
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background-color 0.3s ease;
+}
+
+/* Social SVG icon size */
+.contact-social-icon svg {
+    width: 21px;
+    height: 21px;
+    fill: currentColor;
+}
+
+/* Social icon hover */
+.contact-social-icon:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent-color);
+    background: var(--bg-secondary);
+}
+
+/* Tablet layout */
+@media (max-width: 850px) {
+    .contact-primary-links {
+        grid-template-columns: 1fr;
+        max-width: 550px;
+    }
+
+    .contact-primary-btn {
+        padding: 20px;
+    }
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+    .contact-primary-links {
+        gap: 14px;
+        margin-top: 25px;
+    }
+
+    .contact-primary-btn {
+        padding: 17px;
+    }
+
+    .contact-social-section {
+        margin-top: 30px;
+    }
+
+    .contact-social-icon {
+        width: 44px;
+        height: 44px;
+    }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .contact-primary-btn,
+    .contact-social-icon {
+        transition: none;
+    }
+
+    .contact-primary-btn:hover,
+    .contact-social-icon:hover {
+        transform: none;
+    }
+}
+
+
+
+
+/* =========================================
+   SHARED SECTION STYLES
+   Common styles for Education and Certifications
+========================================= */
+
+/* Small description below section headings */
+.section-description {
+    max-width: 750px;
+    margin-bottom: 30px;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* =========================================
+   EDUCATION SECTION
+========================================= */
+
+/* Space between education cards */
+#education .education-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--accent-primary);
+    border-radius: 12px;
+
+    padding: 26px;
+    margin-top: 22px;
+
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Lift the card slightly on hover */
+#education .education-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-primary);
+}
+
+/* Degree or qualification title */
+#education .education-card h3 {
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+}
+
+/* Institution and academic years */
+#education .education-card .education-meta {
+    color: var(--accent-hover);
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+/* Education description */
+#education .education-card p:last-child {
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   CERTIFICATIONS SECTION
+========================================= */
+
+/* Display certificate cards in a responsive grid */
+.certifications-grid {
+    display: grid;
+
+    /* Three columns on larger screens */
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 22px;
+    margin-top: 28px;
+}
+
+/* Individual certification card */
+.certification-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+
+    padding: 24px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    min-height: 160px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Card hover effect */
+.certification-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-primary);
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Certificate name */
+.certification-card h3 {
+    color: var(--text-primary);
+    font-size: 1.05rem;
+    line-height: 1.5;
+
+    margin-bottom: 12px;
+}
+
+/* Issuing organization */
+.certification-card p {
+    font-size: 0.92rem;
+    line-height: 1.7;
+}
+
+/* Certificate verification links */
+.certification-card a {
+    display: inline-block;
+    color: var(--accent-hover);
+    font-weight: 600;
+
+    margin-top: 14px;
+}
+
+/* Verification link hover */
+.certification-card a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   CERTIFICATIONS ACTION BUTTON
+========================================= */
+
+/* Space above the View All Certificates button */
+.certifications-action {
+    margin-top: 32px;
+}
+
+/* =========================================
+   TECHNICAL SKILLS
+========================================= */
+
+/* Individual skill category */
+.skill-group {
+    margin-top: 28px;
+}
+
+/* Category heading */
+.skill-group h3 {
+    color: var(--accent-hover);
+    font-size: 1.1rem;
+    margin-bottom: 14px;
+}
+
+/* Arrange skill tags in rows */
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* Individual skill tag */
+.skill-tags span {
+    display: inline-block;
+
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 7px;
+
+    color: var(--text-secondary);
+    padding: 8px 14px;
+
+    font-size: 0.9rem;
+
+    transition:
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+/* Highlight skill tags on hover */
+.skill-tags span:hover {
+    color: var(--text-primary);
+    border-color: var(--accent-primary);
+}
+
+/* =========================================
+   FEATURED PROJECTS PLACEHOLDER
+========================================= */
+
+/* Temporary featured-project panel */
+.featured-projects-placeholder {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+
+    padding: 30px;
+    margin-top: 25px;
+}
+
+/* Placeholder heading */
+.featured-projects-placeholder h3 {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+}
+
+/* Placeholder description */
+.featured-projects-placeholder p {
+    max-width: 650px;
+    margin-bottom: 20px;
+}
+
+/* =========================================
+   CONTACT SECTION
+========================================= */
+
+/* Arrange contact buttons horizontally */
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* Remove extra margins from contact buttons */
+.contact-links .btn {
+    margin: 0;
+}
+
+/* Secondary button style */
+.btn-secondary {
+    background-color: transparent !important;
+    color: var(--accent-hover) !important;
+    border: 1px solid var(--accent-primary) !important;
+}
+
+/* Secondary button hover */
+.btn-secondary:hover {
+    background-color: var(--bg-card) !important;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+/* Tablets and smaller laptops */
+@media (max-width: 900px) {
+
+    /* Two columns for certificate cards */
+    .certifications-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+/* Mobile phones */
+@media (max-width: 560px) {
+
+    /* One column for certificate cards */
+    .certifications-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Reduce card padding on smaller screens */
+    #education .education-card,
+    .certification-card,
+    .featured-projects-placeholder {
+        padding: 20px;
+    }
+
+    /* Smaller education headings */
+    #education .education-card h3 {
+        font-size: 1.1rem;
+    }
+
+    /* Stack contact buttons vertically */
+    .contact-links {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}
+
+/* Featured projects: Responsive card grid */
+.featured-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+}
+
+/* Individual featured project card */
+.featured-project-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 26px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+/* Hover effect */
+.featured-project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-blue);
+}
+
+/* Project category label */
+.project-category {
+    margin-bottom: 14px;
+    color: var(--accent-blue);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Project title */
+.featured-project-card h3 {
+    margin-bottom: 14px;
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+/* Project description */
+.featured-project-card p {
+    margin-bottom: 18px;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* Technology tags */
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 22px;
+}
+
+/* Individual tag */
+.project-tags span {
+    padding: 6px 10px;
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 0.78rem;
+}
+
+/* Project navigation link */
+.project-card-link {
+    margin-top: auto;
+    color: var(--accent-blue);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.project-card-link:hover {
+    text-decoration: underline;
+}
+
+/* View all projects button */
+.featured-projects-action {
+    margin-top: 32px;
+    text-align: center;
+}
+
+/* Tablet layout */
+@media (max-width: 950px) {
+    .featured-projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+    .featured-projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-project-card {
+        padding: 22px;
+    }
+}
+
+
+
+
+
+
+
+
+/* ============================================
+   CONTACT FORM STYLING
+   ============================================ */
+
+/* Contact form ka main container */
+.contact-form {
+    max-width: 650px;
+    margin: 32px auto 0;
+    padding: 30px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+}
+
+/* Har input field ka container */
+.contact-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 22px;
+}
+
+/* Input labels */
+.contact-form label {
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+/* Text inputs aur message area */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 13px 15px;
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font: inherit;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Message area ko vertically resize kar sakte hain */
+.contact-form textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+/* Input focus hone par blue highlight */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+/* Placeholder text ka color */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.8;
+}
+
+/* Submit button */
+.contact-form button {
+    cursor: pointer;
+    font: inherit;
+}
+
+/* Form submission status message */
+#form-status {
+    margin-top: 16px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Mobile devices ke liye spacing adjust karein */
+@media (max-width: 600px) {
+    .contact-form {
+        padding: 20px;
+    }
+}
+
+
+
+
+
+
+
+
+/* ============================================
+   EDUCATION SECTION - ENHANCED STYLING
+   ============================================ */
+
+/* Education cards ke beech consistent spacing */
+#education .education-card {
+    position: relative;
+    margin-bottom: 24px;
+    padding: 28px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Hover par card ko subtle highlight karna */
+#education .education-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-color);
+}
+
+/* Qualification ka title */
+#education .education-card h3 {
+    margin-bottom: 12px;
+    color: var(--text-primary);
+    font-size: 1.2rem;
+}
+
+/* Board, location aur year ki details */
+#education .education-meta {
+    margin-bottom: 16px;
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+/* Education card ka description */
+#education .education-card > p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+/* Percentage aur learning achievement ko highlight karna */
+#education .education-card .education-result {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 8px 14px;
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 0.95rem;
+}
+
+/* Achievement ki value ko blue accent dena */
+#education .education-result strong {
+    color: var(--accent-color);
+}
+
+/* Mobile screens ke liye spacing adjust karna */
+@media (max-width: 600px) {
+    #education .education-card {
+        padding: 20px;
+    }
+
+    #education .education-card h3 {
+        font-size: 1.05rem;
+    }
+
+    #education .education-meta {
+        font-size: 0.85rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* ============================================
+   ACHIEVEMENTS & VOLUNTEERING
+   Reuse existing education card design
+   ============================================ */
+
+#achievements .achievement-card {
+    margin-bottom: 20px;
+}
+
+/* Keep achievement descriptions readable */
+#achievements .achievement-card p {
+    line-height: 1.7;
+}
+
+/* Highlight achievement details */
+#achievements .achievement-card .education-result {
+    margin-top: 12px;
+}
+
+
+
+
+
+
+/* =========================================
+   VIEW ALL PROJECTS & CERTIFICATES BUTTONS
+   ========================================= */
+
+/* Center both buttons below their respective sections. */
+.featured-projects-action,
+.certifications-action {
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+    padding-bottom: 10px;
+}
+
+/* Shared styling for both buttons. */
+.featured-projects-action .btn,
+.certifications-action .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    min-height: 48px;
+    padding: 13px 26px;
+
+    color: var(--accent-blue);
+    background: transparent;
+    border: 1px solid var(--accent-blue);
+    border-radius: 10px;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+/* Shared hover effect for both buttons. */
+.featured-projects-action .btn:hover,
+.certifications-action .btn:hover {
+    color: #ffffff;
+    background: var(--accent-blue);
+    border-color: var(--accent-blue);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgb(59 130 246 / 20%);
+}
+
+/* Make keyboard focus visible for accessibility. */
+.featured-projects-action .btn:focus-visible,
+.certifications-action .btn:focus-visible {
+    outline: 2px solid var(--accent-blue);
+    outline-offset: 4px;
+}
+
+/* Add a subtle press effect when clicked. */
+.featured-projects-action .btn:active,
+.certifications-action .btn:active {
+    transform: translateY(0);
+}
+
+/* Respect reduced-motion preferences. */
+@media (prefers-reduced-motion: reduce) {
+    .featured-projects-action .btn,
+    .certifications-action .btn {
+        transition: none;
+    }
+
+    .featured-projects-action .btn:hover,
+    .certifications-action .btn:hover {
+        transform: none;
+    }
+}
+
+
+
+
+
+
+
+
+/* =========================================
+   HERO SECTION ACTION BUTTONS
+   ========================================= */
+
+/* Arrange hero buttons neatly with consistent spacing. */
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    margin-top: 30px;
+}
+
+/* Shared styling for both hero buttons. */
+.hero-actions .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    min-height: 50px;
+    padding: 14px 26px;
+
+    border: 1px solid var(--accent-blue);
+    border-radius: 10px;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.4;
+    text-align: center;
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+/* Primary button: Explore My Projects. */
+.hero-actions .btn-primary {
+    color: #ffffff;
+    background: var(--accent-blue);
+    border-color: var(--accent-blue);
+    box-shadow: 0 5px 18px rgb(59 130 246 / 20%);
+}
+
+/* Make the primary button stand out on hover. */
+.hero-actions .btn-primary:hover {
+    background: #2563eb;
+    border-color: #2563eb;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgb(59 130 246 / 30%);
+}
+
+/* Secondary button: Contact Me. */
+.hero-actions .btn-secondary {
+    color: var(--accent-blue);
+    background: transparent;
+    border-color: var(--accent-blue);
+}
+
+/* Highlight the secondary button on hover. */
+.hero-actions .btn-secondary:hover {
+    color: #ffffff;
+    background: var(--accent-blue);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgb(59 130 246 / 20%);
+}
+
+/* Visible keyboard focus for accessibility. */
+.hero-actions .btn:focus-visible {
+    outline: 2px solid var(--accent-blue);
+    outline-offset: 4px;
+}
+
+/* Subtle press effect when clicked. */
+.hero-actions .btn:active {
+    transform: translateY(0);
+}
+
+/* Mobile layout: stack buttons when space is limited. */
+@media (max-width: 480px) {
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/* Respect reduced-motion preferences. */
+@media (prefers-reduced-motion: reduce) {
+    .hero-actions .btn {
+        transition: none;
+    }
+
+    .hero-actions .btn:hover {
+        transform: none;
+    }
+}
+
+
+
+/* =========================================
+   PREMIUM PROJECT CARD EFFECTS
+   Adds depth and smooth hover interactions
+   ========================================= */
+
+/* Default project card appearance */
+.project-card {
+    border: 1px solid var(--border-color);
+    box-shadow: 0 6px 20px rgb(0 0 0 / 12%);
+
+    /* Smooth transition for hover effects */
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Highlight the card when the mouse hovers over it */
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-primary);
+    box-shadow: 0 12px 28px rgb(0 0 0 / 25%);
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .project-card {
+        transition: none;
+    }
+
+    .project-card:hover {
+        transform: none;
+    }
+}

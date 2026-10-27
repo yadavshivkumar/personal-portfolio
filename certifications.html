@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Character encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Responsive layout for mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Browser tab title -->
+    <title>Certifications | Shiv</title>
+
+    <!-- Website favicon shown in the browser tab -->
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+
+    <!-- Search engine description -->
+    <meta name="description"
+        content="Explore professional certificates and courses completed by Shiv in data analytics, programming, and web development.">
+
+    <!-- Reuse the main portfolio design -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Styles specific to the certifications page -->
+    <link rel="stylesheet" href="css/certifications.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header>
+        <nav>
+
+            <!-- Portfolio logo -->
+            <a href="index.html" class="logo">
+                <span></span>
+            </a>
+
+            <!-- Navigation links -->
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#education">Education</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <main>
+
+        <!-- Page introduction -->
+        <section id="certifications-page">
+
+            <p class="certifications-eyebrow">
+                PROFESSIONAL DEVELOPMENT
+            </p>
+
+            <h1>My Certifications</h1>
+
+            <p class="certifications-intro">
+                A collection of professional courses and certificates
+                completed to strengthen my technical knowledge
+                and continue learning.
+            </p>
+
+            <!-- Certificate count -->
+            <div class="certification-summary">
+
+                <span class="certificate-count"></span>
+
+                <div>
+                    <h1 >Professional Certificates</h1>
+                    <p>Learning, practice, and continuous improvement.</p>
+                </div>
+
+            </div>
+
+
+            <!-- =====================================
+                 SEARCH AND CATEGORY FILTERS
+            ====================================== -->
+
+            <div class="certification-controls">
+
+                <!-- Search certificates by name or provider -->
+                <label for="certificate-search">
+                    Search certificates
+                </label>
+
+                <input
+                    type="search"
+                    id="certificate-search"
+                    placeholder="Search by certificate name or provider..."
+                    autocomplete="off"
+                >
+
+                <!-- Filter certificates by category -->
+                <label for="certificate-category">
+                    Filter by category
+                </label>
+
+                <select id="certificate-category">
+
+                    <option value="all">All Categories</option>
+
+                    <option value="data-analytics">
+                        Data Analytics
+                    </option>
+
+                    <option value="programming">
+                        Programming & Development
+                    </option>
+
+                    <option value="web-development">
+                        Web Development
+                    </option>
+
+                    <option value="other">
+                        Other Professional Skills
+                    </option>
+
+                </select>
+
+                <!-- Number of visible certificates -->
+                <p id="certificate-results" aria-live="polite">
+                    Showing 3 sample certificates
+                </p>
+
+            </div>
+
+
+            <!-- =====================================
+                 CERTIFICATE GRID
+            ====================================== -->
+
+            <div class="all-certifications-grid" id="certificate-grid">
+
+                <!-- JavaScript will insert all certificate cards here -->
+<div id="certificate-grid" class="certifications-grid"></div>
+
+            </div>
+
+
+            <!-- Message displayed when there are no matches -->
+            <p id="no-certificates" hidden>
+                No certificates match your search.
+                Try another search term or category.
+            </p>
+
+
+            <!-- Return to homepage -->
+            <div class="back-home">
+
+                <a href="index.html#certifications" class="btn btn-primary">
+                    Back to Homepage
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 Shiv. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- Certificate search and filter functionality -->
+    <script src="js/certifications.js"></script>
+
+</body>
+
+</html>

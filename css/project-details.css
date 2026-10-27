@@ -1,0 +1,248 @@
+/* ==========================================
+   PROJECT DETAILS PAGE
+   Main layout and spacing
+========================================== */
+
+.project-detail {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-top: 48px;
+    padding-bottom: 80px;
+}
+
+/* Link to return to all projects */
+.back-link {
+    display: inline-block;
+    margin-bottom: 28px;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================
+   PROJECT INTRODUCTION
+========================================== */
+
+.project-detail-hero {
+    padding: 40px;
+    margin-bottom: 32px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+}
+
+/* Project category label */
+.project-category-label {
+    margin: 0 0 14px;
+    color: var(--accent-color);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+/* Main project title */
+.project-detail-hero h1 {
+    margin: 0 0 20px;
+    color: var(--text-primary);
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.2;
+}
+
+/* Short project introduction */
+.project-lead {
+    max-width: 800px;
+    margin: 0 0 24px;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* ==========================================
+   TECHNOLOGY TAGS
+========================================== */
+
+.project-tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 24px 0;
+}
+
+.project-tech-tags span {
+    display: inline-block;
+    padding: 8px 14px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+}
+
+/* ==========================================
+   PROJECT ACTION BUTTONS
+========================================== */
+
+.project-detail-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 28px;
+}
+
+/* ==========================================
+   PROJECT INFORMATION SECTIONS
+========================================== */
+
+.detail-section {
+    padding: 32px;
+    margin-bottom: 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+}
+
+/* Section headings */
+.detail-section h2 {
+    margin: 0 0 20px;
+    color: var(--text-primary);
+    font-size: 1.6rem;
+    line-height: 1.4;
+}
+
+/* Paragraphs */
+.detail-section p {
+    margin: 0 0 16px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.detail-section p:last-child {
+    margin-bottom: 0;
+}
+
+/* Lists for objectives, workflow, features and learnings */
+.detail-list {
+    padding-left: 24px;
+    margin: 0;
+    color: var(--text-secondary);
+    line-height: 1.9;
+}
+
+.detail-list li {
+    padding-left: 6px;
+    margin-bottom: 10px;
+}
+
+.detail-list li:last-child {
+    margin-bottom: 0;
+}
+
+/* ==========================================
+   TECHNOLOGY CARDS
+========================================== */
+
+.detail-tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.detail-tool-card {
+    padding: 20px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+.detail-tool-card h3 {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   PROJECT PREVIEW PLACEHOLDER
+========================================== */
+
+.project-preview-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 180px;
+    padding: 24px;
+    background: var(--bg-secondary);
+    border: 1px dashed var(--border-color);
+    border-radius: 12px;
+    text-align: center;
+}
+
+.project-preview-placeholder p {
+    max-width: 500px;
+}
+
+/* ==========================================
+   BOTTOM NAVIGATION
+========================================== */
+
+.detail-footer {
+    padding-top: 16px;
+    text-align: center;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+
+/* Tablets */
+@media (max-width: 768px) {
+    .project-detail {
+        padding-top: 32px;
+        padding-bottom: 56px;
+    }
+
+    .project-detail-hero {
+        padding: 28px;
+    }
+
+    .detail-section {
+        padding: 24px;
+    }
+
+    .detail-tools-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 520px) {
+    .project-detail-hero {
+        padding: 22px;
+    }
+
+    .detail-section {
+        padding: 20px;
+    }
+
+    .detail-tools-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-detail-actions {
+        flex-direction: column;
+    }
+
+    .project-detail-actions .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .detail-section h2 {
+        font-size: 1.35rem;
+    }
+}

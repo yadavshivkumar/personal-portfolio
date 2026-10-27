@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Set character encoding and responsive layout -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- JavaScript will update the title for each project -->
+    <title>Project Details | Shiv</title>
+
+    <meta name="description"
+          content="Explore project details, technologies, implementation, and outcomes in Shiv's IT and data portfolio.">
+
+    <!-- Shared portfolio styling -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Website favicon shown in the browser tab -->
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+
+    <!-- Styling for the projects listing page -->
+    <link rel="stylesheet" href="css/projects.css">
+
+    <!-- Styling specific to project details -->
+    <link rel="stylesheet" href="css/project-details.css">
+</head>
+
+<body>
+
+    <!-- Website navigation -->
+    <header class="site-header">
+        <nav class="navbar container">
+
+            <!-- Portfolio logo -->
+            <a href="index.html" class="logo"><span></span></a>
+
+            <!-- Main navigation links -->
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="projects.html">All Projects</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+
+        </nav>
+    </header>
+
+    <!-- Main content: JavaScript will insert the selected project's details -->
+    <main class="project-detail container">
+
+        <!-- Back navigation -->
+        <a href="projects.html" class="back-link">
+            &larr; Back to All Projects
+        </a>
+
+        <!-- Project information will be rendered here dynamically -->
+        <div id="project-detail-content">
+
+            <!-- Fallback message shown before project data loads -->
+            <div class="project-loading">
+                <h1>Loading Project...</h1>
+                <p>Please wait while the project details load.</p>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Website footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 Shiv. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript loads the selected project based on its URL ID -->
+    <script src="js/project-details.js"></script>
+
+</body>
+
+</html>

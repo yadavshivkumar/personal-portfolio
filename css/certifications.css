@@ -1,0 +1,387 @@
+
+/* =========================================
+   CERTIFICATIONS PAGE
+========================================= */
+
+/* Main page content */
+#certifications-page {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 80px 24px;
+}
+
+/* Small heading above the page title */
+.certifications-eyebrow {
+    color: var(--accent-hover);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 16px;
+}
+
+/* Main page heading */
+#certifications-page > h1 {
+    font-size: clamp(2.3rem, 5vw, 3.5rem);
+    margin-bottom: 20px;
+}
+
+/* Page introduction */
+.certifications-intro {
+    max-width: 720px;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+/* Certificate count summary */
+.certification-summary {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+
+    padding: 24px;
+    margin-bottom: 40px;
+
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+/* Large certificate count */
+.certificate-count {
+    color: var(--accent-hover);
+    font-size: 2.7rem;
+    font-weight: 800;
+}
+
+/* Summary heading */
+.certification-summary h2 {
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+}
+
+/* =========================================
+   SEARCH AND FILTERS
+========================================= */
+
+/* Search and category controls */
+.certification-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 20px;
+    margin-bottom: 30px;
+}
+
+/* Input labels */
+.certification-controls label {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* Search box and dropdown */
+.certification-controls input,
+.certification-controls select {
+    width: 100%;
+    min-width: 0;
+
+    padding: 13px 14px;
+
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+
+    font: inherit;
+}
+
+/* Focus state for keyboard and mouse users */
+.certification-controls input:focus,
+.certification-controls select:focus {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
+}
+
+/* Search results count */
+#certificate-results {
+    grid-column: 1 / -1;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* =========================================
+   CERTIFICATE GRID
+========================================= */
+
+/* Responsive certificate layout */
+.all-certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+/* Individual certificate card */
+.certificate-item {
+    min-width: 0;
+    padding: 24px;
+
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+/* Card hover effect */
+.certificate-item:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-primary);
+}
+
+/* Category label */
+.certificate-category {
+    display: inline-block;
+
+    color: var(--accent-hover);
+    background-color: var(--bg-secondary);
+
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+
+    padding: 5px 10px;
+    margin-bottom: 16px;
+
+    font-size: 0.8rem;
+}
+
+/* Certificate title */
+.certificate-item h2 {
+    font-size: 1.15rem;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    overflow-wrap: anywhere;
+}
+
+/* Certificate provider */
+.certificate-provider {
+    font-size: 0.92rem;
+    margin-bottom: 12px;
+}
+
+/* Certificate description */
+.certificate-description {
+    font-size: 0.92rem;
+    line-height: 1.7;
+}
+
+/* Verification link */
+.certificate-item a {
+    display: inline-block;
+    color: var(--accent-hover);
+    font-weight: 600;
+    margin-top: 18px;
+}
+
+/* Hide filtered-out certificate cards */
+.certificate-item[hidden] {
+    display: none;
+}
+
+/* Empty search message */
+#no-certificates {
+    margin-top: 25px;
+    padding: 20px;
+
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+}
+
+/* Back button */
+.back-home {
+    margin-top: 40px;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+/* Tablets */
+@media (max-width: 900px) {
+
+    .all-certifications-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+/* Mobile phones */
+@media (max-width: 560px) {
+
+    #certifications-page {
+        padding: 55px 20px;
+    }
+
+    .certification-controls {
+        grid-template-columns: 1fr;
+    }
+
+    #certificate-results {
+        grid-column: auto;
+    }
+
+    .all-certifications-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .certification-summary {
+        align-items: flex-start;
+        gap: 15px;
+        padding: 18px;
+    }
+
+    .certificate-count {
+        font-size: 2.2rem;
+    }
+
+}
+
+/* Certificate collection: responsive card layout */
+#certificate-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 30px;
+    align-items: stretch;
+}
+
+/* Individual certificate card */
+.certificate-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    background: #162238;
+    border: 1px solid #293952;
+    border-radius: 14px;
+    transition: transform 0.25s ease, border-color 0.25s ease,
+                box-shadow 0.25s ease;
+    min-width: 0;
+}
+
+/* Subtle hover effect */
+.certificate-item:hover {
+    transform: translateY(-5px);
+    border-color: #3b82f6;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
+}
+
+/* Certificate title */
+.certificate-item h3 {
+    color: #f1f5f9;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0 0 14px;
+    overflow-wrap: anywhere;
+}
+
+/* Provider, completion date, and credential ID */
+.certificate-item p {
+    color: #aebbd0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 5px 0;
+    overflow-wrap: anywhere;
+}
+
+/* Verification link */
+.certificate-item a {
+    display: inline-block;
+    margin-top: auto;
+    padding-top: 18px;
+    color: #60a5fa;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.certificate-item a:hover {
+    color: #93c5fd;
+    text-decoration: underline;
+}
+
+/* Notice when a verification URL is not available */
+.certificate-item .certificate-note {
+    margin-top: auto;
+    padding-top: 18px;
+    color: #fbbf24;
+    font-size: 0.85rem;
+}
+
+/* Responsive layout for tablets */
+@media (max-width: 1000px) {
+    #certificate-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Responsive layout for mobile phones */
+@media (max-width: 600px) {
+    #certificate-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .certificate-item {
+        padding: 20px;
+    }
+}
+
+
+
+
+
+
+/* ============================================
+   CERTIFICATIONS - ENHANCED CARD STYLING
+   ============================================ */
+
+/* Certificate cards ke liye consistent layout */
+.certificate-card {
+    position: relative;
+    padding: 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Hover par subtle highlight */
+.certificate-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-color);
+}
+
+/* Certificate title */
+.certificate-card h3 {
+    margin-bottom: 12px;
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
+/* Issuing organization aur certificate details */
+.certificate-card p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+/* Mobile screens par padding adjust karna */
+@media (max-width: 600px) {
+    .certificate-card {
+        padding: 18px;
+    }
+
+    .certificate-card h3 {
+        font-size: 1rem;
+    }
+}

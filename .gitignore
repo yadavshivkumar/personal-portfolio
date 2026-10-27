@@ -1,0 +1,46 @@
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Operating system files
+.DS_Store
+Thumbs.db   
+
+# Editor settings
+.vscode/
+
+# Temporary files
+*.tmp
+*.log
+
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+.venv/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+
+
+
+# macOS system files
+.DS_Store
+
+# Visual Studio Code local settings
+.vscode/
+
+# Temporary and log files
+*.log
+*.tmp
+
+# Environment files and secrets
+.env
+.env.*
+!.env.example
