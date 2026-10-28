@@ -1,4 +1,4 @@
-```javascript
+
 // ============================================
 // PROJECT ELEMENTS
 // ============================================
@@ -319,4 +319,3 @@ filterProjects("all");
 console.log(
     "Projects initialized: GitHub links, Live Demo links, and category filters are ready."
 );
-```
