@@ -474,29 +474,40 @@
    GITHUB BUTTON - PROJECT CARDS
    ========================================= */
 
-/* Default button appearance */
+
+
+/* Arrange buttons vertically with consistent spacing. */
+.project-card-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    margin-top: auto;
+}
+
+/* Shared styling for both action buttons. */
 .project-card-actions .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: 8px;
+
     width: 100%;
     min-height: 46px;
     padding: 12px 16px;
 
-    /* Transparent background with a blue border */
-    background: transparent;
-    color: var(--accent-blue);
     border: 1px solid var(--accent-blue);
     border-radius: 8px;
 
-    /* Text styling */
     font-size: 0.9rem;
     font-weight: 600;
+    line-height: 1.5;
     text-align: center;
     text-decoration: none;
-    line-height: 1.5;
+    overflow-wrap: anywhere;
 
-    /* Smooth hover animation */
+    cursor: pointer;
+
     transition:
         background 0.25s ease,
         color 0.25s ease,
@@ -505,27 +516,49 @@
         box-shadow 0.25s ease;
 }
 
-/* Hover effect */
-.project-card-actions .btn:hover {
+/* Live Demo: solid blue button to highlight the working website. */
+.project-card-actions .live-demo-btn {
+    color: #ffffff;
     background: var(--accent-blue);
-    color: #3096f4;
+    border-color: var(--accent-blue);
+}
+
+/* Give the Live Demo button a subtle glow on hover. */
+.project-card-actions .live-demo-btn:hover {
+    color: #ffffff;
+    background: #2563eb;
+    border-color: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgb(59 130 246 / 25%);
+}
+
+/* GitHub: transparent button with a blue outline. */
+.project-card-actions .btn:not(.live-demo-btn) {
+    color: var(--accent-blue);
+    background: transparent;
+}
+
+/* Highlight the GitHub button on hover. */
+.project-card-actions .btn:not(.live-demo-btn):hover {
+    color: #3b42d1;
+    background: var(--accent-blue);
     border-color: var(--accent-blue);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgb(59 130 246 / 20%);
 }
 
-/* Keyboard accessibility */
+/* Keep keyboard navigation accessible. */
 .project-card-actions .btn:focus-visible {
     outline: 2px solid var(--accent-blue);
     outline-offset: 4px;
 }
 
-/* Button click effect */
+/* Give the buttons a subtle click response. */
 .project-card-actions .btn:active {
     transform: translateY(0);
 }
 
-/* Respect reduced-motion preferences */
+/* Respect reduced-motion preferences. */
 @media (prefers-reduced-motion: reduce) {
     .project-card-actions .btn {
         transition: none;
@@ -534,4 +567,143 @@
     .project-card-actions .btn:hover {
         transform: none;
     }
+}
+
+
+
+
+
+/* =========================================
+   PROJECT ACTION BUTTONS
+   ========================================= */
+
+.project-card-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    width: 100%;
+    margin-top: auto;
+}
+
+/* Complete rectangular outline */
+.project-card-actions .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    min-height: 46px;
+    padding: 12px 18px;
+    box-sizing: border-box;
+
+    background-color: transparent !important;
+    color: var(--accent-blue) !important;
+
+    border: 3px solid var(--accent-blue) !important;
+    border-radius: 5px !important;
+
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+
+    box-shadow: none;
+    cursor: pointer;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+/* Blue fill on hover */
+.project-card-actions .btn:hover {
+    background-color: var(--accent-blue) !important;
+    color: #3773eb !important;
+    border-color: var(--accent-blue) !important;
+
+    transform: translateY(-2px);
+}
+
+/* Keyboard focus */
+.project-card-actions .btn:focus-visible {
+    outline: 2px solid var(--accent-blue);
+    outline-offset: 3px;
+}
+
+/* Click feedback */
+.project-card-actions .btn:active {
+    transform: translateY(0);
+}
+
+/* Mobile-friendly buttons */
+@media (max-width: 480px) {
+    .project-card-actions .btn {
+        min-height: 44px;
+        padding: 10px 14px;
+        font-size: 13px;
+    }
+}
+
+/* Accessibility: reduce animation */
+@media (prefers-reduced-motion: reduce) {
+    .project-card-actions .btn {
+        transition: none;
+    }
+
+    .project-card-actions .btn:hover {
+        transform: none;
+    }
+}
+
+
+
+
+/* Clearly visible rectangular button boxes */
+.project-card-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    margin-top: auto;
+}
+
+.project-card-actions a.btn,
+.project-card-actions button.btn {
+    display: block !important;
+    width: 100% !important;
+    min-height: 46px;
+    padding: 12px 16px !important;
+    box-sizing: border-box;
+
+    background: transparent !important;
+    color: #5ba6f7 !important;
+
+    border: 2px solid #4da3ff !important;
+    border-radius: 5px !important;
+
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+    box-shadow: none !important;
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+/* Hover: filled blue rectangle */
+.project-card-actions a.btn:hover,
+.project-card-actions button.btn:hover {
+    background: #288bf5 !important;
+    color: #ede8e8 !important;
+    border-color: #eff1f3 !important;
 }

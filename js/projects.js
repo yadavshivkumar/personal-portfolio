@@ -103,6 +103,30 @@ const projectGitHubMap = {
         "https://github.com/yadavshivkumar/shopease-ecommerce-website"
 };
 
+// ============================================
+// LIVE DEMO LINKS FOR WEB DEVELOPMENT PROJECTS
+// ============================================
+
+// These URLs point to the published GitHub Pages websites.
+// Only web projects will receive a Live Demo button.
+
+const projectLiveDemoMap = {
+    "web:employee management system":
+        "https://yadavshivkumar.github.io/employee-management-system/",
+
+    "web:ausbildung application tracker":
+        "https://yadavshivkumar.github.io/ausbildung-application-tracker/",
+
+    "web:student management system":
+        "https://yadavshivkumar.github.io/student-management-system/",
+
+    "web:shopease ecommerce":
+        "https://yadavshivkumar.github.io/shopease-ecommerce-website/",
+
+    "web:shopease e commerce":
+        "https://yadavshivkumar.github.io/shopease-ecommerce-website/"
+};
+
 
 // ============================================
 // NORMALIZE PROJECT TITLES
@@ -130,83 +154,71 @@ function normalizeProjectTitle(title) {
 // Every card gets a GitHub button when a matching
 // repository URL is available in projectGitHubMap.
 
-projectCards.forEach((card) => {
 
-    // Read the category assigned to this project card.
+// ============================================
+// ADD GITHUB AND LIVE DEMO BUTTONS TO PROJECTS
+// ============================================
+
+projectCards.forEach((card) => {
+    // Read the project's category, such as Excel, Python, or Web.
     const category = card.dataset.category;
 
-    // Find the project title inside the card.
-    const titleElement = card.querySelector(
-        "h3, h2, .project-card-title"
-    );
+    // Get the project title from the card.
+    const titleElement = card.querySelector("h3, h2, .project-card-title");
 
-    // Skip the card if its title cannot be found.
     if (!titleElement) {
-        console.warn(
-            "Project card title not found:",
-            card
-        );
+        console.warn("Project title not found:", card);
         return;
     }
 
-    // Normalize the project title for consistent matching.
-    const normalizedTitle = normalizeProjectTitle(
-        titleElement.textContent
-    );
-
-    // Combine the category and title to find the repository.
+    // Normalize the title so it matches the mapping keys.
+    const normalizedTitle = normalizeProjectTitle(titleElement.textContent);
     const mappingKey = `${category}:${normalizedTitle}`;
 
-    // Look up the GitHub repository URL.
+    // Find the GitHub repository and optional live demo URL.
     const githubUrl = projectGitHubMap[mappingKey];
+    const liveDemoUrl = projectLiveDemoMap[mappingKey];
 
-    // Find the existing action-buttons container.
-    let actions = card.querySelector(
-        ".project-card-actions"
-    );
+    // Find or create the container for project action buttons.
+    let actions = card.querySelector(".project-card-actions");
 
-    // Create the container if the card does not have one.
     if (!actions) {
         actions = document.createElement("div");
         actions.className = "project-card-actions";
         card.appendChild(actions);
     }
 
-    // Remove any old View Details buttons from the container.
+    // Clear existing buttons to avoid duplicates.
     actions.innerHTML = "";
 
-    // Add a GitHub button only when a repository URL exists.
-    if (githubUrl) {
+    // Add the Live Demo button only when a demo URL exists.
+    if (liveDemoUrl) {
+        const demoButton = document.createElement("a");
 
-        // Create the repository link.
+        demoButton.className = "btn btn-primary live-demo-btn";
+        demoButton.href = liveDemoUrl;
+        demoButton.target = "_blank";
+        demoButton.rel = "noopener noreferrer";
+        demoButton.textContent = "Live Demo Link";
+        demoButton.setAttribute("aria-label", `Open live demo for ${titleElement.textContent.trim()}`);
+
+        actions.appendChild(demoButton);
+    }
+
+    // Add the GitHub button.
+    if (githubUrl) {
         const githubButton = document.createElement("a");
 
-        // Set the link to the corresponding GitHub repository.
-        githubButton.href = githubUrl;
-
-        // Reuse the existing primary button styling.
         githubButton.className = "btn btn-primary";
-
-        // Set the button's visible text.
-        githubButton.textContent =
-            "View Detailed Project on GitHub →";
-
-        // Open GitHub in a new browser tab.
+        githubButton.href = githubUrl;
         githubButton.target = "_blank";
-
-        // Improve security when opening an external website.
         githubButton.rel = "noopener noreferrer";
+        githubButton.textContent = "View Details on GitHub ";
+        githubButton.setAttribute("aria-label", `View GitHub repository for ${titleElement.textContent.trim()}`);
 
-        // Add the button to the project card.
         actions.appendChild(githubButton);
-
     } else {
-
-        // Log unmatched cards so their titles can be corrected.
-        console.warn(
-            "GitHub repository mapping not found:",
-            mappingKey
-        );
+        console.warn("GitHub URL not found for project:", mappingKey);
     }
 });
 
