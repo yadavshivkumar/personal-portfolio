@@ -1,23 +1,14 @@
-// ============================================
-// PROJECTS PAGE
-// GitHub links, project cards and category filters
-// ============================================
-
 
 // ============================================
-// SELECT HTML ELEMENTS
+// PROJECT ELEMENTS
 // ============================================
 
-// Select all project cards from the projects page.
+// Select all project cards and category filter buttons.
 const projectCards = document.querySelectorAll(".project-card");
-
-// Select all category filter buttons.
 const filterButtons = document.querySelectorAll(".filter-btn");
 
-// Select the visible-project counter.
+// Elements used to display project count and empty state.
 const projectCount = document.getElementById("project-count");
-
-// Select the message displayed when no projects are found.
 const noProjectsMessage = document.getElementById("no-projects");
 
 
@@ -25,18 +16,11 @@ const noProjectsMessage = document.getElementById("no-projects");
 // GITHUB REPOSITORY LINKS
 // ============================================
 
-// IMPORTANT:
-// Excel repository names are unchanged because those
-// repositories have already been uploaded.
-// Python and Web repository links use the final names
-// we selected. Create those repositories with exactly
-// the same names before uploading the projects.
-
+// Maps project categories and normalized titles to GitHub repositories.
 const projectGitHubMap = {
 
     // ----------------------------------------
-    // EXCEL DATA ANALYSIS PROJECTS
-    // Existing repository names: DO NOT CHANGE
+    // EXCEL PROJECTS
     // ----------------------------------------
 
     "excel:coffee shop sales analysis":
@@ -59,8 +43,7 @@ const projectGitHubMap = {
 
 
     // ----------------------------------------
-    // PYTHON DATA ANALYSIS PROJECTS
-    // Use the final repository names listed below.
+    // PYTHON PROJECTS
     // ----------------------------------------
 
     "python:student performance analysis":
@@ -84,7 +67,6 @@ const projectGitHubMap = {
 
     // ----------------------------------------
     // WEB DEVELOPMENT PROJECTS
-    // Use the final repository names listed below.
     // ----------------------------------------
 
     "web:employee management system":
@@ -129,13 +111,37 @@ const projectLiveDemoMap = {
 
 
 // ============================================
+// LIVE DEMO LINKS
+// ============================================
+
+// Only published Web Development projects have Live Demo links.
+// Excel and Python projects will display GitHub buttons only.
+
+const projectLiveDemoMap = {
+
+    "web:employee management system":
+        "https://yadavshivkumar.github.io/employee-management-system/",
+
+    "web:ausbildung application tracker":
+        "https://yadavshivkumar.github.io/ausbildung-application-tracker/",
+
+    "web:student management system":
+        "https://yadavshivkumar.github.io/student-management-system/",
+
+    "web:shopease ecommerce":
+        "https://yadavshivkumar.github.io/shopease-ecommerce-website/",
+
+    "web:shopease e commerce":
+        "https://yadavshivkumar.github.io/shopease-ecommerce-website/"
+};
+
+
+// ============================================
 // NORMALIZE PROJECT TITLES
 // ============================================
 
-// Normalize titles so differences in capitalization,
-// punctuation and extra spaces do not cause lookup errors.
-// The word "Website" is removed because it is not needed
-// when matching a project title to its GitHub repository.
+// Converts titles into a consistent format for matching.
+// Example: "ShopEase E-commerce Website" -> "shopease e commerce"
 
 function normalizeProjectTitle(title) {
     return title
@@ -148,13 +154,13 @@ function normalizeProjectTitle(title) {
 
 
 // ============================================
-// ADD GITHUB BUTTONS TO PROJECT CARDS
+// ADD PROJECT ACTION BUTTONS
 // ============================================
 
-// Every card gets a GitHub button when a matching
-// repository URL is available in projectGitHubMap.
+// Automatically adds GitHub and Live Demo buttons to project cards.
 
 
+<<<<<<< HEAD
 // ============================================
 // ADD GITHUB AND LIVE DEMO BUTTONS TO PROJECTS
 // ============================================
@@ -166,11 +172,23 @@ projectCards.forEach((card) => {
     // Get the project title from the card.
     const titleElement = card.querySelector("h3, h2, .project-card-title");
 
+=======
+    // Read the category from the project card.
+    const category = card.dataset.category;
+
+    // Find the project title.
+    const titleElement = card.querySelector(
+        "h3, h2, .project-card-title"
+    );
+
+    // Skip cards without a recognizable title.
+>>>>>>> d723e6e66559ceef4f63096929188241e9262dab
     if (!titleElement) {
         console.warn("Project title not found:", card);
         return;
     }
 
+<<<<<<< HEAD
     // Normalize the title so it matches the mapping keys.
     const normalizedTitle = normalizeProjectTitle(titleElement.textContent);
     const mappingKey = `${category}:${normalizedTitle}`;
@@ -182,12 +200,30 @@ projectCards.forEach((card) => {
     // Find or create the container for project action buttons.
     let actions = card.querySelector(".project-card-actions");
 
+=======
+    // Normalize the title and create its mapping key.
+    const normalizedTitle = normalizeProjectTitle(
+        titleElement.textContent
+    );
+
+    const mappingKey = `${category}:${normalizedTitle}`;
+
+    // Look up the GitHub repository and optional live demo.
+    const githubUrl = projectGitHubMap[mappingKey];
+    const liveDemoUrl = projectLiveDemoMap[mappingKey];
+
+    // Find the action buttons container.
+    let actions = card.querySelector(".project-card-actions");
+
+    // Create the container if it does not exist.
+>>>>>>> d723e6e66559ceef4f63096929188241e9262dab
     if (!actions) {
         actions = document.createElement("div");
         actions.className = "project-card-actions";
         card.appendChild(actions);
     }
 
+<<<<<<< HEAD
     // Clear existing buttons to avoid duplicates.
     actions.innerHTML = "";
 
@@ -207,6 +243,44 @@ projectCards.forEach((card) => {
 
     // Add the GitHub button.
     if (githubUrl) {
+=======
+    // Clear existing buttons to prevent duplicates.
+    actions.innerHTML = "";
+
+
+    // ----------------------------------------
+    // LIVE DEMO BUTTON
+    // ----------------------------------------
+
+    // Display this button only when a live demo URL exists.
+    if (liveDemoUrl) {
+
+        const demoButton = document.createElement("a");
+
+        demoButton.className = "btn btn-primary live-demo-btn";
+        demoButton.href = liveDemoUrl;
+        demoButton.target = "_blank";
+        demoButton.rel = "noopener noreferrer";
+
+        demoButton.textContent = "Live Demo ↗";
+
+        demoButton.setAttribute(
+            "aria-label",
+            `Open live demo for ${titleElement.textContent.trim()}`
+        );
+
+        actions.appendChild(demoButton);
+    }
+
+
+    // ----------------------------------------
+    // GITHUB BUTTON
+    // ----------------------------------------
+
+    // All mapped projects receive a GitHub repository button.
+    if (githubUrl) {
+
+>>>>>>> d723e6e66559ceef4f63096929188241e9262dab
         const githubButton = document.createElement("a");
 
         githubButton.className = "btn btn-primary";
@@ -216,50 +290,67 @@ projectCards.forEach((card) => {
         githubButton.textContent = "View Details on GitHub ";
         githubButton.setAttribute("aria-label", `View GitHub repository for ${titleElement.textContent.trim()}`);
 
+<<<<<<< HEAD
+=======
+        githubButton.textContent = "View on GitHub ↗";
+
+        githubButton.setAttribute(
+            "aria-label",
+            `View GitHub repository for ${titleElement.textContent.trim()}`
+        );
+
+>>>>>>> d723e6e66559ceef4f63096929188241e9262dab
         actions.appendChild(githubButton);
     } else {
+<<<<<<< HEAD
         console.warn("GitHub URL not found for project:", mappingKey);
+=======
+
+        // Helps identify any project missing a GitHub mapping.
+        console.warn(
+            "GitHub URL not found for project:",
+            mappingKey
+        );
+>>>>>>> d723e6e66559ceef4f63096929188241e9262dab
     }
 });
 
 
 // ============================================
-// FILTER PROJECTS BY CATEGORY
+// PROJECT CATEGORY FILTER
 // ============================================
 
-// Show all projects or only projects in the selected category.
+// Filters projects by category and updates the project count.
 
 function filterProjects(category) {
 
-    // Track how many projects are currently visible.
     let visibleCount = 0;
 
     projectCards.forEach((card) => {
 
-        // Read the category assigned to this card.
-        const projectCategory = card.dataset.category;
+        const cardCategory = card.dataset.category;
 
-        // Show the card if All is selected or its category matches.
+        // Show all projects or only the selected category.
         const shouldShow =
-            category === "all" ||
-            projectCategory === category;
+            category === "all" || cardCategory === category;
 
-        // Hide cards that do not match the selected category.
         card.hidden = !shouldShow;
 
-        // Count visible cards.
         if (shouldShow) {
             visibleCount++;
         }
     });
 
-    // Update the visible-project counter.
+
+    // Update the visible project count.
     if (projectCount) {
+
         projectCount.textContent =
-            `Showing ${visibleCount} project${visibleCount === 1 ? "" : "s"}`;
+            `Showing ${visibleCount} project${visibleCount !== 1 ? "s" : ""}`;
     }
 
-    // Display the no-projects message only if no cards are visible.
+
+    // Display an empty-state message when no projects match.
     if (noProjectsMessage) {
         noProjectsMessage.hidden = visibleCount !== 0;
     }
@@ -270,50 +361,42 @@ function filterProjects(category) {
 // FILTER BUTTON EVENT LISTENERS
 // ============================================
 
-// Respond when a user clicks a category filter.
+// Updates the active filter and applies the selected category.
 
 filterButtons.forEach((button) => {
 
     button.addEventListener("click", () => {
 
-        // Read the selected category from the button.
-        const selectedCategory = button.dataset.filter;
+        // Read the selected category.
+        const category = button.dataset.filter;
 
-        // Display projects belonging to that category.
-        filterProjects(selectedCategory);
-
-        // Update the active filter button and accessibility state.
+        // Update the active button.
         filterButtons.forEach((filterButton) => {
 
             const isActive = filterButton === button;
 
-            // Highlight the selected filter.
-            filterButton.classList.toggle(
-                "active",
-                isActive
-            );
+            filterButton.classList.toggle("active", isActive);
 
-            // Update the button's accessibility state.
             filterButton.setAttribute(
                 "aria-pressed",
                 String(isActive)
             );
         });
+
+        // Apply the selected category filter.
+        filterProjects(category);
     });
 });
 
 
 // ============================================
-// INITIALIZE THE PROJECTS PAGE
+// INITIALIZE PROJECT PAGE
 // ============================================
 
 // Display all projects when the page first loads.
+
 filterProjects("all");
 
-
-// ============================================
-// CONSOLE CONFIRMATION
-// ============================================
-
-// Log a message to help verify that the script has loaded.
-console.log("Projects page initialized successfully.");
+console.log(
+    "Projects initialized: GitHub links, Live Demo links, and category filters are ready."
+);
